@@ -71,7 +71,7 @@ public class IndexReportTest
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
         assertEquals( getString( "report.index.title" ) + " " + getTestMavenProject().getName(),
-                      textBlocks[0].getText() );
-        assertEquals( getString( "report.index.nodescription" ), textBlocks[1].getText() );
+                      textBlocks[1].getText() );
+        assertEquals( getString( "report.index.nodescription" ), textBlocks[2].getText() );
     }
 }

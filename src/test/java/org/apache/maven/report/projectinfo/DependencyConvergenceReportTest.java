@@ -69,6 +69,6 @@ public class DependencyConvergenceReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( getString( "report.dependency-convergence.reactor.name" ), textBlocks[0].getText() );
+        assertEquals( getString( "report.dependency-convergence.reactor.name" ), textBlocks[1].getText() );
     }
 }

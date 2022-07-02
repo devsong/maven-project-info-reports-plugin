@@ -146,8 +146,8 @@ public class DependenciesReport
 
         RepositoryUtils repoUtils =
             new RepositoryUtils( getLog(), projectBuilder, repositorySystem, resolver,
-                                 project.getRemoteArtifactRepositories(), project.getPluginArtifactRepositories(),
-                                 buildingRequest, repositoryMetadataManager );
+                                 remoteRepositories, pluginRepositories, buildingRequest,
+                                 repositoryMetadataManager );
 
         DependencyNode dependencyNode = resolveProject();
 

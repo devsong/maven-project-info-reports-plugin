@@ -69,9 +69,9 @@ public class CiManagementReportTest
         assertEquals( expectedTitle, response.getTitle() );
 
         // Test the texts
-        TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( getString( "report.ci-management.name" ), textBlocks[0].getText() );
-        assertEquals( getString( "report.ci-management.nocim" ), textBlocks[1].getText() );
+        TextBlock[] textBlocks = response. getTextBlocks();
+        assertEquals( getString( "report.ci-management.name" ), textBlocks[1].getText() );
+        assertEquals( getString( "report.ci-management.nocim" ), textBlocks[2].getText() );
     }
 
     /**
@@ -99,9 +99,10 @@ public class CiManagementReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertTrue( textBlocks[1].getText().startsWith( "This project uses " ) );
-        assertEquals(3, textBlocks[1].getNode().getChildNodes().getLength());
-        HTMLAnchorElement anchor = (HTMLAnchorElement) textBlocks[1].getNode().getChildNodes().item( 1 );
+        TextBlock textBlock = textBlocks[2];
+        assertTrue( textBlock.getText().startsWith( "This project uses " ) );
+        assertEquals(3, textBlock.getNode().getChildNodes().getLength());
+        HTMLAnchorElement anchor = (HTMLAnchorElement) textBlock.getNode().getChildNodes().item( 1 );
         assertEquals( "https://www.jetbrains.com/teamcity/", anchor.getAttribute( "href" ) );
         assertEquals( "TeamCity", anchor.getFirstChild().getNodeValue() );
     }

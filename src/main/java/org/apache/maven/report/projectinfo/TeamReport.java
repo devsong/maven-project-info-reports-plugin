@@ -266,7 +266,7 @@ public class TeamReport
                     }
                     else
                     {
-                        tableCell( "<a name=\"" + id + "\"></a>" + id, true );
+                        tableCell( "<a id=\"" + id + "\"></a>" + id, true );
                     }
                 }
             }

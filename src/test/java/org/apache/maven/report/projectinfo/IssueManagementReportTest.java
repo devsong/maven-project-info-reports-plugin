@@ -70,7 +70,7 @@ public class IssueManagementReportTest
 
         // Test the links
         WebLink[] weblinks = response.getLinks();
-        assertEquals( 3, weblinks.length );
+        assertEquals( 4, weblinks.length );
 
         assertEquals( "JIRA", weblinks[1].getText() );
 
@@ -78,8 +78,8 @@ public class IssueManagementReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( getString( "report.issue-management.overview.title" ), textBlocks[0].getText() );
-        assertEquals( "This project uses JIRA.", textBlocks[1].getText() ); // due to link pattern
-        assertEquals( getString( "report.issue-management.name" ), textBlocks[2].getText() );
+        assertEquals( getString( "report.issue-management.overview.title" ), textBlocks[1].getText() );
+        assertEquals( "This project uses JIRA.", textBlocks[2].getText() ); // due to link pattern
+        assertEquals( getString( "report.issue-management.name" ), textBlocks[3].getText() );
     }
 }

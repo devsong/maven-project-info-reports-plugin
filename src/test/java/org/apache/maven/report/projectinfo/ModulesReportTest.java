@@ -87,9 +87,10 @@ public class ModulesReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( 2, textBlocks.length );
-        assertEquals( getString( "report.modules.title" ), textBlocks[0].getText() );
-        assertEquals( getString( "report.modules.intro" ), textBlocks[1].getText() );
+        // Last one is footer noise
+        assertEquals( 4, textBlocks.length - 1 );
+        assertEquals( getString( "report.modules.title" ), textBlocks[1].getText() );
+        assertEquals( getString( "report.modules.intro" ), textBlocks[2].getText() );
 
         String[][] cellTexts = response.getTables()[0].asText();
         assertEquals( 3, cellTexts.length );

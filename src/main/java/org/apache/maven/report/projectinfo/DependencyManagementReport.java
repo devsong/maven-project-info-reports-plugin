@@ -99,8 +99,8 @@ public class DependencyManagementReport
 
         RepositoryUtils repoUtils =
             new RepositoryUtils( getLog(), projectBuilder, repositorySystem, resolver,
-                                 project.getRemoteArtifactRepositories(), project.getPluginArtifactRepositories(),
-                                 buildingRequest, repositoryMetadataManager );
+                                 remoteRepositories, pluginRepositories, buildingRequest,
+                                 repositoryMetadataManager );
 
         DependencyManagementRenderer r =
             new DependencyManagementRenderer( getSink(), locale, getI18N( locale ), getLog(),

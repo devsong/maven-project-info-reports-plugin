@@ -300,7 +300,7 @@ public class DependencyConvergenceReport
     private void generateDependencyDetails( Locale locale, Sink sink, List<ReverseDependencyLink> depList )
     {
         sink.table();
-        sink.tableRows( null, false );
+        sink.tableRows();
 
         Map<String, List<ReverseDependencyLink>> artifactMap = getSortedUniqueArtifactMap( depList );
 
@@ -315,7 +315,7 @@ public class DependencyConvergenceReport
         sink.tableCell();
 
         sink.table();
-        sink.tableRows( null, false );
+        sink.tableRows();
 
         for ( String version : artifactMap.keySet() )
         {
@@ -523,7 +523,7 @@ public class DependencyConvergenceReport
     private void generateLegend( Locale locale, Sink sink )
     {
         sink.table();
-        sink.tableRows( null, false );
+        sink.tableRows();
         sink.tableCaption();
         sink.bold();
         sink.text( getI18nString( locale, "legend" ) );
@@ -564,7 +564,7 @@ public class DependencyConvergenceReport
 
         // Create report
         sink.table();
-        sink.tableRows( null, false );
+        sink.tableRows();
         sink.tableCaption();
         sink.bold();
         sink.text( getI18nString( locale, "stats.caption" ) );

@@ -70,10 +70,10 @@ public class SummaryReportTest
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
 
-        assertEquals( getString( "report.summary.title" ), textBlocks[0].getText() );
-        assertEquals( getString( "report.summary.general.title" ), textBlocks[1].getText() );
-        assertEquals( getString( "report.summary.organization.title" ), textBlocks[2].getText() );
-        assertEquals( getString( "report.summary.noorganization" ), textBlocks[3].getText() );
-        assertEquals( getString( "report.summary.build.title" ), textBlocks[4].getText() );
+        assertEquals( getString( "report.summary.title" ), textBlocks[1].getText() );
+        assertEquals( getString( "report.summary.general.title" ), textBlocks[2].getText() );
+        assertEquals( getString( "report.summary.organization.title" ), textBlocks[3].getText() );
+        assertEquals( getString( "report.summary.noorganization" ), textBlocks[4].getText() );
+        assertEquals( getString( "report.summary.build.title" ), textBlocks[5].getText() );
     }
 }

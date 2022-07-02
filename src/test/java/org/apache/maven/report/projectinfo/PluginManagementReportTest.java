@@ -114,7 +114,7 @@ public class PluginManagementReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( getString( "report.plugin-management.title" ), textBlocks[0].getText() );
+        assertEquals( getString( "report.plugin-management.title" ), textBlocks[1].getText() );
     }
 
     /**
@@ -159,7 +159,7 @@ public class PluginManagementReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( getString( "report.plugin-management.title" ), textBlocks[0].getText() );
+        assertEquals( getString( "report.plugin-management.title" ), textBlocks[1].getText() );
     }
 
     private static ProjectBuildingResult createProjectBuildingResult( Artifact artifact, String url )

@@ -94,21 +94,16 @@ public abstract class AbstractProjectInfoReport
     @Parameter( defaultValue = "${session}", readonly = true, required = true )
     private MavenSession session;
 
+    @Parameter( defaultValue = "${project.remoteArtifactRepositories}", readonly = true, required = true )
+    protected List<ArtifactRepository> remoteRepositories;
+
     /**
      * Plugin repositories used for the project.
      *
      * @since 3.1.0
      */
-    @Parameter( property = "project.pluginArtifactRepositories" )
+    @Parameter( defaultValue = "${project.pluginArtifactRepositories}", readonly = true, required = true )
     protected List<ArtifactRepository> pluginRepositories;
-
-    /**
-     * The reactor projects.
-     *
-     * @since 2.10
-     */
-    @Parameter( defaultValue = "${reactorProjects}", required = true, readonly = true )
-    protected List<MavenProject> reactorProjects;
 
     /**
      * The current user system settings for use in Maven.
@@ -151,6 +146,12 @@ public abstract class AbstractProjectInfoReport
      */
     @Parameter
     private List<LicenseMapping> licenseMappings;
+
+    /**
+     * The local repository.
+     */
+    @Parameter( defaultValue = "${localRepository}", readonly = true, required = true )
+    protected ArtifactRepository localRepository;
 
     // ----------------------------------------------------------------------
     // Public methods
@@ -226,11 +227,6 @@ public abstract class AbstractProjectInfoReport
         return session;
     }
 
-    /**
-     * Reactor projects
-     *
-     * @return List of projects
-     */
     protected List<MavenProject> getReactorProjects()
     {
         return reactorProjects;
@@ -329,6 +325,7 @@ public abstract class AbstractProjectInfoReport
         return getI18nString( locale, "description" );
     }
 
+    // TODO Review, especially Locale.getDefault()
     private static class CustomI18N
         implements I18N
     {

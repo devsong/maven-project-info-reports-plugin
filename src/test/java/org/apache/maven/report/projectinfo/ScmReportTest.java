@@ -72,13 +72,14 @@ public class ScmReportTest
 
         // Test the texts
         TextBlock[] textBlocks = response.getTextBlocks();
-        assertEquals( 6, textBlocks.length );
-        assertEquals( getString( "report.scm.overview.title" ), textBlocks[0].getText() );
-        assertEquals( getString( "report.scm.general.intro" ), textBlocks[1].getText() );
-        assertEquals( getString( "report.scm.webaccess.title" ), textBlocks[2].getText() );
-        assertEquals( getString( "report.scm.webaccess.nourl" ), textBlocks[3].getText() );
-        assertEquals( getString( "report.scm.accessbehindfirewall.title" ), textBlocks[4].getText() );
-        assertEquals( getString( "report.scm.accessbehindfirewall.general.intro" ), textBlocks[5].getText() );
+        // Last one is footer noise
+        assertEquals( 8, textBlocks.length - 1 );
+        assertEquals( getString( "report.scm.overview.title" ), textBlocks[1].getText() );
+        assertEquals( getString( "report.scm.general.intro" ), textBlocks[2].getText() );
+        assertEquals( getString( "report.scm.webaccess.title" ), textBlocks[3].getText() );
+        assertEquals( getString( "report.scm.webaccess.nourl" ), textBlocks[4].getText() );
+        assertEquals( getString( "report.scm.accessbehindfirewall.title" ), textBlocks[5].getText() );
+        assertEquals( getString( "report.scm.accessbehindfirewall.general.intro" ), textBlocks[6].getText() );
     }
 
     /**
