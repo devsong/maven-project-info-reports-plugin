@@ -74,4 +74,10 @@ public class IndexReportTest
                       textBlocks[1].getText() );
         assertEquals( getString( "report.index.nodescription" ), textBlocks[2].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "index";
+    }
 }

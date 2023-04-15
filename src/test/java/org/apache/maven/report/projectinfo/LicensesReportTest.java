@@ -117,4 +117,10 @@ public class LicensesReportTest
         assertEquals( "https://www.apache.org/licenses/LICENSE-2.0.txt", links[1].getURLString() );
         assertEquals( "https://www.apache.org/licenses/LICENSE-2.0.txt", links[1].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "licenses";
+    }
 }

@@ -175,4 +175,10 @@ public class PluginManagementReportTest
 
         return result;
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "plugin-management";
+    }
 }

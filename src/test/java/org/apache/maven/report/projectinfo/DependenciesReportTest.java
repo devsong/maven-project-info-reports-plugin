@@ -86,4 +86,11 @@ public class DependenciesReportTest
         assertEquals( getString( "report.dependencies.graph.tree.title" ), textBlocks[6].getText() );
         assertEquals( getString( "report.dependencies.graph.tables.licenses" ), textBlocks[7].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "dependencies";
+    }
+
 }

@@ -139,4 +139,10 @@ public class ModulesReportTest
         assertFalse( "Variable 'sitePublishLocation' should be interpolated",
                      FileUtils.readFileToString( getGeneratedReport( "modules.html" ) ).contains( "sitePublishLocation" ) );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "modules";
+    }
 }

@@ -76,4 +76,10 @@ public class SummaryReportTest
         assertEquals( getString( "report.summary.noorganization" ), textBlocks[4].getText() );
         assertEquals( getString( "report.summary.build.title" ), textBlocks[5].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "summary";
+    }
 }

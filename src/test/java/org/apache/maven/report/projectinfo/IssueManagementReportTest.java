@@ -82,4 +82,10 @@ public class IssueManagementReportTest
         assertEquals( "This project uses JIRA.", textBlocks[2].getText() ); // due to link pattern
         assertEquals( getString( "report.issue-management.name" ), textBlocks[3].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "issue-management";
+    }
 }

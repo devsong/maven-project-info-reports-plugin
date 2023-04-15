@@ -106,4 +106,10 @@ public class CiManagementReportTest
         assertEquals( "https://www.jetbrains.com/teamcity/", anchor.getAttribute( "href" ) );
         assertEquals( "TeamCity", anchor.getFirstChild().getNodeValue() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "ci-management";
+    }
 }

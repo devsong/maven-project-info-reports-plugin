@@ -137,4 +137,10 @@ public class ScmReportTest
             assertTrue( "IllegalArgumentException catched", true );
         }
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "scm";
+    }
 }

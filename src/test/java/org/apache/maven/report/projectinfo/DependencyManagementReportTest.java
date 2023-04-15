@@ -81,4 +81,10 @@ public class DependencyManagementReportTest
         assertEquals( getString( "report.dependency-management.title" ), textBlocks[1].getText() );
         assertEquals( "test", textBlocks[2].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "dependency-management";
+    }
 }

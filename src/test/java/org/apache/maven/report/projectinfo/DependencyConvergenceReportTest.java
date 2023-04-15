@@ -71,4 +71,11 @@ public class DependencyConvergenceReportTest
         TextBlock[] textBlocks = response.getTextBlocks();
         assertEquals( getString( "report.dependency-convergence.reactor.name" ), textBlocks[1].getText() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "dependency-convergence";
+    }
+
 }

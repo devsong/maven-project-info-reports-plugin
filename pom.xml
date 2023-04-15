@@ -120,12 +120,12 @@ under the License.
   <properties>
     <javaVersion>8</javaVersion>
     <doxiaVersion>2.0.0-M6</doxiaVersion>
-    <doxiaSitetoolsVersion>2.0.0-M6</doxiaSitetoolsVersion>
+    <doxiaSitetoolsVersion>2.0.0-M8</doxiaSitetoolsVersion>
     <mavenVersion>3.2.5</mavenVersion>
     <scmVersion>1.13.0</scmVersion>
     <aetherVersion>1.0.0.v20140518</aetherVersion>
-    <sitePluginVersion>4.0.0-M6</sitePluginVersion>
-    <fluidoSkinVersion>2.0.0-M3</fluidoSkinVersion>
+    <sitePluginVersion>4.0.0-M8-SNAPSHOT</sitePluginVersion>
+    <fluidoSkinVersion>2.0.0-M6-SNAPSHOT</fluidoSkinVersion>
     <surefire.version>3.0.0</surefire.version>
     <checkstyle.violation.ignore>ParameterNumber,MethodLength</checkstyle.violation.ignore>
     <project.build.outputTimestamp>2023-01-06T21:01:13Z</project.build.outputTimestamp>
@@ -135,12 +135,12 @@ under the License.
     <dependency>
       <groupId>org.apache.maven.reporting</groupId>
       <artifactId>maven-reporting-api</artifactId>
-      <version>4.0.0-M5</version>
+      <version>4.0.0-M6</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven.reporting</groupId>
       <artifactId>maven-reporting-impl</artifactId>
-      <version>4.0.0-M5</version>
+      <version>4.0.0-M7</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.maven</groupId>
@@ -488,6 +488,12 @@ under the License.
           <excludes>
             <exclude>**/DependenciesReportTest*</exclude><!-- FIXME: missing Maven 3 class or conflict -->
           </excludes>
+          <systemPropertyVariables>
+              <!-- NOTE: This is unfortunately required because httpunit forces 'file.encoding' onto all
+              file URLs without the option to read 'charset' from <meta /> or to override explicitly:
+              https://github.com/kohsuke/httpunit/blob/a2841fd31fbf3bc234bea02f6bd18a87f5ec6574/src/com/meterware/httpunit/HttpWebResponse.java#L240-L245 -->
+              <file.encoding>UTF-8</file.encoding>
+          </systemPropertyVariables>
         </configuration>
       </plugin>
       <!-- To use Jetty SSL in tests -->

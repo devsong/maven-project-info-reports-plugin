@@ -111,4 +111,10 @@ public class MailingListsReportTest
         generateReport( "mailing-lists", "mailing-lists-plugin-config-invalidlink.xml" );
         assertTrue( "Test html generated", getGeneratedReport( "mailing-lists.html" ).exists() );
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "mailing-lists";
+    }
 }

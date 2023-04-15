@@ -25,7 +25,11 @@ import java.util.Collections;
 import java.util.List;
 
 import org.apache.maven.doxia.tools.SiteTool;
+import org.apache.maven.model.Plugin;
 import org.apache.maven.plugin.LegacySupport;
+import org.apache.maven.plugin.MojoExecution;
+import org.apache.maven.plugin.descriptor.MojoDescriptor;
+import org.apache.maven.plugin.descriptor.PluginDescriptor;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
 import org.apache.maven.plugin.testing.ArtifactStubFactory;
 import org.apache.maven.plugin.testing.stubs.MavenProjectStub;
@@ -187,6 +191,7 @@ public abstract class AbstractProjectInfoTestCase
 
         List<MavenProject> reactorProjects = mojo.getReactorProjects() != null ? mojo.getReactorProjects() : Collections.emptyList();
 
+        setVariableValueToObject( mojo, "mojoExecution", getMockMojoExecution() );
         setVariableValueToObject( mojo, "session", legacySupport.getSession() );
         setVariableValueToObject( mojo, "repoSession", legacySupport.getRepositorySession() );
         setVariableValueToObject( mojo, "reactorProjects", reactorProjects );
@@ -215,5 +220,23 @@ public abstract class AbstractProjectInfoTestCase
         return new File( outputDir, filename );
     }
 
+    private MojoExecution getMockMojoExecution()
+    {
+        MojoDescriptor md = new MojoDescriptor();
+        md.setGoal( getGoal() );
+
+        MojoExecution me = new MojoExecution( md );
+
+        PluginDescriptor pd = new PluginDescriptor();
+        Plugin p = new Plugin();
+        p.setGroupId( "org.apache.maven.plugins" );
+        p.setArtifactId( "maven-project-info-reports-plugin" );
+        pd.setPlugin( p );
+        md.setPluginDescriptor( pd );
+
+        return me;
+    }
+
+    protected abstract String getGoal();
 
 }

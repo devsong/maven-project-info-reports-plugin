@@ -96,4 +96,10 @@ public class TeamReportTest
         assertEquals(1, links.length);
         assertEquals("mailto:vsiveton@apache.org", links[0].getURLString());
     }
+
+    @Override
+    protected String getGoal()
+    {
+        return "team";
+    }
 }

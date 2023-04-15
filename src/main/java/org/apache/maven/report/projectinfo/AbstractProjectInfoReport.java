@@ -36,6 +36,7 @@ import java.util.ResourceBundle;
 import org.apache.maven.artifact.repository.ArtifactRepository;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.model.Plugin;
+import org.apache.maven.plugin.MojoExecution;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
@@ -230,6 +231,11 @@ public abstract class AbstractProjectInfoReport
     protected List<MavenProject> getReactorProjects()
     {
         return reactorProjects;
+    }
+
+    protected MojoExecution getMojoExecution()
+    {
+        return mojoExecution;
     }
 
     /**
