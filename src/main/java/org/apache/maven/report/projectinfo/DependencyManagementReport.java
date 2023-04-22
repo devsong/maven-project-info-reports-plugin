@@ -78,7 +78,7 @@ public class DependencyManagementReport
     @Override
     public boolean canGenerateReport()
     {
-        boolean result = super.canGenerateReport();
+        boolean result = super.canGenerateReport() && super.canGenerateDependencyReport();
         if ( result && skipEmptyReport )
         {
             result = getManagementDependencies().hasDependencies();

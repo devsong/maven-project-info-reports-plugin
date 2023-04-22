@@ -135,6 +135,9 @@ public abstract class AbstractProjectInfoReport
     @Parameter( property = "mpir.skip", defaultValue = "false" )
     private boolean skip;
 
+    @Parameter( property = "mpir.dm.skip", defaultValue = "false" )
+    protected boolean dependencyManagementSkip;
+
     /**
      * Skip the project info report generation if a report-specific section of the POM is empty. Defaults to
      * <code>true</code>.
@@ -160,6 +163,11 @@ public abstract class AbstractProjectInfoReport
     public boolean canGenerateReport()
     {
         return !skip;
+    }
+
+    protected boolean canGenerateDependencyReport()
+    {
+        return !dependencyManagementSkip;
     }
 
     @Override
